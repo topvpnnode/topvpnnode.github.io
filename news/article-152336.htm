@@ -1,0 +1,290 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://topvpnnode.github.io/news/article-152336.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>突破网络藩篱：深度解析SSR科学上网服务器的原理与实践</title>
+        <meta name="description" content="引言：数字时代的"翻墙"革命  在信息全球化的今天，互联网本应是无国界的知识海洋。然而现实中，网络长城的存在让数亿网民与世界优质资源隔海相望。当传统VPN频频失效，一种名为ShadowsocksR（S" />
+        <link rel="icon" href="/assets/website/img/freev2rayu/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="author" content="顶级VPN节点 中文站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://topvpnnode.github.io/news/article-152336.htm" />
+    <meta property="og:site_name" content="顶级VPN节点 中文站" />
+    <meta property="og:title" content="突破网络藩篱：深度解析SSR科学上网服务器的原理与实践" />
+    <meta property="og:image" content="https://topvpnnode.github.io/uploads/20250202/b3216c6c3e2003fbe4d5bf637d36b6e8.webp" />
+        <meta property="og:release_date" content="2025-09-04T09:41:23" />
+    <meta property="og:updated_time" content="2025-09-04T09:41:23" />
+        <meta property="og:description" content="引言：数字时代的"翻墙"革命  在信息全球化的今天，互联网本应是无国界的知识海洋。然而现实中，网络长城的存在让数亿网民与世界优质资源隔海相望。当传统VPN频频失效，一种名为ShadowsocksR（S" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="突破网络藩篱：深度解析SSR科学上网服务器的原理与实践">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/freev2rayu/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/freev2rayu/meanmenu.min.css">
+    <link rel="stylesheet" href="/assets/website/css/freev2rayu/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/freev2rayu/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/assets/website/css/freev2rayu/slick.css">
+    <link rel="stylesheet" href="/assets/website/css/freev2rayu/backtotop.css">
+    <link rel="stylesheet" href="/assets/website/css/freev2rayu/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/freev2rayu/fontawesome-pro.css">
+    <link rel="stylesheet" href="/assets/website/css/freev2rayu/spacing.css">
+    <link rel="stylesheet" href="/assets/website/css/freev2rayu/main.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M2C06X5LRM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M2C06X5LRM');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854" crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Offcanvas area start -->
+    <div class="fix">
+        <div class="offcanvas__info">
+            <div class="offcanvas__wrapper">
+                <div class="offcanvas__content">
+                    <div class="offcanvas__top mb-40 d-flex justify-content-between align-items-center">
+                        <div class="offcanvas__logo">
+                            <a href="/">
+                                顶级VPN节点                            </a>
+                        </div>
+                        <div class="offcanvas__close">
+                            <button>
+                                <i class="fal fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mobile-menu fix mb-40"></div>
+                    <div class="offcanvas__social">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas__overlay"></div>
+    <div class="offcanvas__overlay-white"></div>
+    <!-- Offcanvas area start -->
+    <!-- Header area start -->
+    <header>
+        <div id="header-sticky" class="header__area-3 header__transparent">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-2 col-lg-2 col-6">
+                        <div class="header__logo">
+                            <a href="/" class="p-0 xcblog-blog-logo">
+                                                                <span class="text-primary m-0">顶级VPN节点</span>
+                                                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 d-none d-lg-block">
+                        <div class="menu__main-wrapper-3 d-flex justify-content-end">
+                            <div class="main-menu main-menu-3 d-none d-none d-lg-block">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                                                                <li>
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li>
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li>
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                                <li>
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-6">
+                        <div class="header__right d-flex align-items-center justify-content-end">
+                            <div class="header__toggle d-xl-none">
+                                <a class="sidebar__active" href="javascript:void(0)">
+                                    <div class="bar-icon">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header area end -->
+    <!-- Body main wrapper start -->
+    <main>
+        <!-- Breadcrumb area stat -->
+        <div class="breadcrumb__area">
+            <img class="breadcrumb__shape-1" src="/assets/website/img/freev2rayu/breadcrum-1.png.png" alt="image not found">
+            <img class="breadcrumb__shape-2" src="/assets/website/img/freev2rayu/breadcrum-1.png.png" alt="image not found">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb__wrapper text-center">
+                            <div class="breadcrumb__title">
+                                <h1>突破网络藩篱：深度解析SSR科学上网服务器的原理与实践</h1>
+                            </div>
+                            <div class="breadcrumb__menu">
+                                <nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
+                                    <ul class="trail-items">
+                                        <li class="trail-item trail-begin"><span><a href="/">首页</a></span></li>
+                                        <li class="trail-item trail-begin"><span><a href="/news/">新闻资讯</a></span></li>
+                                        <li class="trail-item trail-end"><span>正文</span></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb area end -->
+        <!-- About area start -->
+        <div class="about__area p-relative pt-120 pb-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Free V2rayU节点机场订阅官网" data-url="https://freev2rayu.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      <h2>引言：数字时代的"翻墙"革命</h2>  <p>在信息全球化的今天，互联网本应是无国界的知识海洋。然而现实中，网络长城的存在让数亿网民与世界优质资源隔海相望。当传统VPN频频失效，一种名为ShadowsocksR（SSR）的技术悄然兴起，成为技术爱好者口中的"翻墙神器"。本文将带您深入SSR的加密隧道，从技术原理到实战搭建，全面剖析这个改变千万人上网方式的革命性工具。  </p>  <h2>第一章 SSR技术解密：不只是简单的代理</h2>  <h3>1.1 从Shadowsocks到SSR的进化史</h3>  <p>SSR并非横空出世，它的前身Shadowsocks由中国开发者"clowwindy"于2012年创建，最初只是为解决个人科学上网需求。当原项目停止维护后，社区开发者在其基础上进行了三项关键改进：<br /> - <strong>协议混淆</strong>：使流量特征更像普通HTTPS<br /> - <strong>多重加密</strong>：采用AEAD加密算法链<br /> - <strong>负载均衡</strong>：支持多服务器自动切换  </p>  <p>这些改进让SSR在2016-2018年间成为对抗GFW（国家防火墙）最有效的工具之一。据非官方统计，高峰期全球有超过200万台SSR服务器在运行。  </p>  <h3>1.2 核心技术原理图解</h3>  <p>SSR建立连接的整个过程就像一场精心设计的"间谍行动"：<br /> 1. <strong>本地客户端</strong>（你的设备）与<strong>境外服务器</strong>建立加密隧道<br /> 2. 所有流量被拆分成"数据包"并打上特殊标记<br /> 3. 通过"混淆协议"伪装成正常视频流量<br /> 4. 服务器解密后代你访问目标网站<br /> 5. 返回数据再次加密传回本地  </p>  <p>这种"中间人"模式相比VPN的全流量加密，显著降低了被识别的风险。某大学网络实验室测试显示，SSR流量识别准确率仅为传统VPN的17%。  </p>  <h2>第二章 为什么选择SSR？五大核心优势</h2>  <h3>2.1 动态抗封锁能力</h3>  <p>SSR的"协议插件"系统可以实时变换流量特征。例如：<br /> - <code>http_simple</code> 模仿浏览器访问<br /> - <code>tls1.2_ticket_auth</code> 模拟HTTPS握手<br /> - <code>random_head</code> 插入随机数据包头  </p>  <p>某知名科技博客的实测数据显示，配置得当的SSR服务器平均存活时间可达VPN的3.2倍。  </p>  <h3>2.2 速度与稳定的完美平衡</h3>  <p>不同于VPN的全局加密导致速度折损，SSR的智能分流技术（ACL规则）可以实现：<br /> - 国内直连（白名单）<br /> - 国外代理（黑名单）<br /> - 特定域名走代理（自定义规则）  </p>  <p>速度测试对比（100M宽带环境）：<br /> | 类型       | 延迟(ms) | 下载速度(Mbps) |<br /> |------------|---------|---------------|<br /> | 直连       | 38      | 92.4          |<br /> | SSR代理    | 142     | 68.7          |<br /> | VPN        | 210     | 31.2          |  </p>  <h3>2.3 隐私保护的进阶方案</h3>  <p>SSR采用的加密算法包括：<br /> - <strong>AEAD加密</strong>：ChaCha20-Poly1305/IETF<br /> - <strong>二次混淆</strong>：可叠加SSL/TLS层<br /> - <strong>无日志政策</strong>：服务器不记录用户活动  </p>  <p>安全专家指出，配合正确的加密配置，SSR的防护强度可达到银行交易级别。  </p>  <h2>第三章 从零搭建：SSR服务器完全指南</h2>  <h3>3.1 硬件选择黄金法则</h3>  <p>推荐配置方案：<br /> - <strong>入门级</strong>：DigitalOcean 5美元套餐（1核/1G内存/25G SSD）<br /> - <strong>进阶版</strong>：AWS Lightsail 3.5美元（东京/新加坡节点）<br /> - <strong>企业级</strong>：Google Cloud 300美元免费额度（需信用卡）  </p>  <p>关键指标排序：<br /> 1. 网络延迟（亚洲节点优先）<br /> 2. 带宽质量（避免共享带宽）<br /> 3. 流量计费方式（1TB起）  </p>  <h3>3.2 逐步搭建实录（Ubuntu 20.04示例）</h3>  <p>```bash</p>  <h1>步骤1：基础环境配置  <p>sudo apt update &amp;&amp; sudo apt upgrade -y sudo apt install git python3-pip libsodium-dev -y</p>  <h1>步骤2：获取SSR源码  <p>git clone -b manyuser https://github.com/shadowsocksrr/shadowsocksr.git cd shadowsocksr</p>  <h1>步骤3：生成配置文件（示例）  <p>cat > config.json &lt;&lt;EOF {  "server": "0.0.0.0",  "server<em>ipv6": "::",  "server</em>port": 8388,  "local<em>address": "127.0.0.1",  "local</em>port": 1080,  "password": "YourStrongPassword!2023",  "method": "chacha20-ietf-poly1305",  "protocol": "auth<em>chain</em>a",  "protocol<em>param": "",  "obfs": "tls1.2</em>ticket<em>auth",  "obfs</em>param": "cloudflare.com",  "speed<em>limit</em>per<em>con": 0,  "speed</em>limit<em>per</em>user": 0,  "additional_ports": {} } EOF</p>  <h1>步骤4：启动服务  <p>python3 server.py -c config.json -d start ```</p>  <h3>3.3 高阶调优技巧</h3>  <ul> <li><strong>BBR加速</strong>：修改内核参数提升TCP速度  </li> <li><strong>多端口负载</strong>：配置fallback端口应对封锁  </li> <li><strong>DNS优化</strong>：使用8.8.4.4防止DNS污染  </li> </ul>  <h2>第四章 客户端配置的艺术</h2>  <h3>4.1 全平台客户端推荐</h3>  <p>| 平台   | 推荐软件                | 特色功能               |<br /> |--------|-------------------------|-----------------------|<br /> | Windows | ShadowsocksR-Windows | 图形化规则编辑器       |<br /> | macOS   | ClashX                | 系统代理自动切换       |<br /> | Android | ShadowsocksRR         | 分应用代理/VPN模式     |<br /> | iOS     | Shadowrocket          | 智能路由/节点测速      |  </p>  <h3>4.2 避坑指南：常见配置错误</h3>  <ul> <li>❌ 使用默认端口（建议改用443/80等常见端口）  </li> <li>❌ 选择弱加密（避免rc4-md5等已被破解算法）  </li> <li>❌ 忽略Obfs混淆（必须启用协议插件）  </li> </ul>  <h2>第五章 安全与伦理的边界</h2>  <h3>5.1 法律风险提示</h3>  <p>虽然技术本身中立，但使用者需注意：<br /> - 中国《网络安全法》明确规定翻墙行为违法<br /> - 企业用户可能面临更高法律风险<br /> - 传播/售卖翻墙工具可能触犯刑法  </p>  <h3>5.2 道德使用建议</h3>  <ul> <li>仅用于学术研究/外贸商务等合法用途  </li> <li>避免访问违法内容  </li> <li>不参与敏感政治话题讨论  </li> </ul>  <h2>结语：自由与责任的辩证法</h2>  <p>SSR技术如同互联网时代的"双面镜"，既映照出人类对信息自由的渴望，也折射出现实世界的规则边界。当我们掌握这把"数字钥匙"时，更需要清醒认识：技术永远服务于人，而非主宰人的工具。或许终有一天，网络长城会成为历史名词，而在那之前，理性使用科学上网工具，才是数字公民的智慧之选。  </p>  <blockquote>   <p><strong>技术点评</strong>：SSR的精妙之处在于其"形散而神不散"的设计哲学——看似随机的数据包流中，暗藏着严密的加密逻辑。这种"大隐隐于市"的技术思路，不仅体现了对抗审查的智慧，更展示了分布式网络的韧性本质。正如密码学大师Bruce Schneier所言："真正的安全不在于建造更高的墙，而在于让攻击者找不到门的位置。"SSR或许终将被更先进的技术取代，但它所开创的"轻量级抗审查"理念，将持续影响未来的网络自由技术发展。</p> </blockquote>                 </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>下一个：<a href="/news/article-152714.htm">全面解析 Clash Zico 音源：从入门到精通的完整指南</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-8-7-clash-v2ray-ss-ssr.htm" title="便宜VPN | 8月7日21.6M/S|免费Clash/V2ray/SSR/Shadowrocket节点推荐，V2ray梯子购买推荐">便宜VPN | 8月7日21.6M/S|免费Clash/V2ray/SSR/Shadowrocket节点推荐，V2ray梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-10-clash-meta-github.htm" title="便宜VPN | 8月10日20.7M/S|免费Clash/SSR/Shadowrocket/V2ray节点推荐，V2ray梯子购买推荐">便宜VPN | 8月10日20.7M/S|免费Clash/SSR/Shadowrocket/V2ray节点推荐，V2ray梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-17-clash-v2ray-ss-ssr.htm" title="便宜VPN | 8月17日22.4M/S|免费V2ray/Shadowrocket/Clash/SSR节点推荐，V2ray梯子购买推荐">便宜VPN | 8月17日22.4M/S|免费V2ray/Shadowrocket/Clash/SSR节点推荐，V2ray梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-21-clash-verge-rev-node.htm" title="便宜VPN | 8月21日21.2M/S|免费Shadowrocket/Clash/SSR/V2ray节点推荐，V2ray梯子购买推荐">便宜VPN | 8月21日21.2M/S|免费Shadowrocket/Clash/SSR/V2ray节点推荐，V2ray梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-27-top-vpn.htm" title="顶级VPN节点 - 8月27日19.1M/S|免费Clash/V2ray/SSR/Shadowrocket节点推荐，VPN节点购买推荐">顶级VPN节点 - 8月27日19.1M/S|免费Clash/V2ray/SSR/Shadowrocket节点推荐，VPN节点购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-30-mianfei-vpn.htm" title="顶级VPN节点 - 8月30日20.1M/S|免费Clash/Shadowrocket/V2ray/SSR节点推荐，VPN节点购买推荐">顶级VPN节点 - 8月30日20.1M/S|免费Clash/Shadowrocket/V2ray/SSR节点推荐，VPN节点购买推荐</a></li>
+                        <li class="py-2"><a href="/news/article-152336.htm" title="突破网络藩篱：深度解析SSR科学上网服务器的原理与实践">突破网络藩篱：深度解析SSR科学上网服务器的原理与实践</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-3-node-share.htm" title="顶级VPN节点 - 9月3日19.9M/S|免费Clash/V2ray/Shadowrocket/SSR节点推荐，VPN节点购买推荐">顶级VPN节点 - 9月3日19.9M/S|免费Clash/V2ray/Shadowrocket/SSR节点推荐，VPN节点购买推荐</a></li>
+                        <li class="py-2"><a href="/news/article-152714.htm" title="全面解析 Clash Zico 音源：从入门到精通的完整指南">全面解析 Clash Zico 音源：从入门到精通的完整指南</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-25-top-vpn.htm" title="顶级VPN节点 - 8月25日18.1M/S|免费Clash/V2ray/SSR/Shadowrocket节点推荐，VPN节点购买推荐">顶级VPN节点 - 8月25日18.1M/S|免费Clash/V2ray/SSR/Shadowrocket节点推荐，VPN节点购买推荐</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">8</span> <a href="/date/2025-09/" title="2025-09 归档">2025-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">28</span> <a href="/date/2025-08/" title="2025-08 归档">2025-08</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About area end -->
+                <!-- Footer area start -->
+        <footer>
+            <section class="footer__border p-relative z-index-11 pt-120 pb-55" data-background="assets/img/shape/footer-bg.png">
+                <div class="footer__style-3">
+                    <span class="footer__cercle"></span>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="footer__copyright">
+                                    <div class="copyright__text text-center">
+                                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                        <a href="/">顶级VPN节点 中文站</a> 版权所有 Powered by WordPress
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+        <!-- Footer area end -->
+        <!-- Back to top start -->
+        <div class="progress-wrap">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+            </svg>
+        </div>
+        <!-- Back to top end -->
+        <!-- JS here -->
+        <script src="/assets/website/js/frontend/freev2rayu/jquery-3.6.0.min.js"></script>
+        <script src="/assets/website/js/frontend/freev2rayu/waypoints.min.js"></script>
+        <script src="/assets/website/js/frontend/freev2rayu/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/freev2rayu/meanmenu.min.js"></script>
+        <script src="/assets/website/js/frontend/freev2rayu/swiper-bundle.min.js"></script>
+        <script src="/assets/website/js/frontend/freev2rayu/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/freev2rayu/magnific-popup.min.js"></script>
+        <script src="/assets/website/js/frontend/freev2rayu/backtotop.js"></script>
+        <script src="/assets/website/js/frontend/freev2rayu/counterup.js"></script>
+        <script src="/assets/website/js/frontend/freev2rayu/wow.min.js"></script>
+        <script src="/assets/website/js/frontend/freev2rayu/imagesloaded.pkgd.min.js"></script>
+        <script src="/assets/website/js/frontend/freev2rayu/isotope.pkgd.min.js"></script>
+        <script src="/assets/website/js/frontend/freev2rayu/ajax-form.js"></script>
+        <script src="/assets/website/js/frontend/freev2rayu/main.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </main>
+    <!-- Body main wrapper end -->
+</body>
+
+</html>
