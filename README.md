@@ -1,4 +1,4 @@
-# 顶级VPN节点 - 11月14日18.4M/S|免费Shadowrocket节点/V2ray节点/Clash节点/SSR节点/Singbox节点节点推荐，VPN节点购买推荐  更新时间 2025-11-14 00:32:27
+# 顶级VPN节点 - 11月22日18.7M/S|免费Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点节点推荐，VPN节点购买推荐  更新时间 2025-11-22 08:53:13
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://topvpnnode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://topvpnnode.github.io/uploads/2025/11/0-20251114.yaml
-- https://topvpnnode.github.io/uploads/2025/11/1-20251114.yaml
-- https://topvpnnode.github.io/uploads/2025/11/2-20251114.yaml
-- https://topvpnnode.github.io/uploads/2025/11/3-20251114.yaml
-- https://topvpnnode.github.io/uploads/2025/11/4-20251114.yaml
+- https://topvpnnode.github.io/uploads/2025/11/0-20251122.yaml
+- https://topvpnnode.github.io/uploads/2025/11/1-20251122.yaml
+- https://topvpnnode.github.io/uploads/2025/11/2-20251122.yaml
+- https://topvpnnode.github.io/uploads/2025/11/3-20251122.yaml
+- https://topvpnnode.github.io/uploads/2025/11/4-20251122.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://topvpnnode.github.io/uploads/2025/11/0-20251114.txt
-- https://topvpnnode.github.io/uploads/2025/11/1-20251114.txt
-- https://topvpnnode.github.io/uploads/2025/11/2-20251114.txt
-- https://topvpnnode.github.io/uploads/2025/11/3-20251114.txt
-- https://topvpnnode.github.io/uploads/2025/11/4-20251114.txt
+- https://topvpnnode.github.io/uploads/2025/11/0-20251122.txt
+- https://topvpnnode.github.io/uploads/2025/11/1-20251122.txt
+- https://topvpnnode.github.io/uploads/2025/11/2-20251122.txt
+- https://topvpnnode.github.io/uploads/2025/11/3-20251122.txt
+- https://topvpnnode.github.io/uploads/2025/11/4-20251122.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://topvpnnode.github.io/uploads/2025/11/20251114.json
+- https://topvpnnode.github.io/uploads/2025/11/20251122.json
 
 ## 更多Clash节点订阅 ：
 
