@@ -367,9 +367,9 @@ A5：不必强制每日更换，但应在发现节点失效或网络不稳定时
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 可以替换 Clash 的 YAML 配置吗？</h5></div>
+    <div class="panel-heading"><h5>Netch 如何选择全局代理与规则代理模式？</h5></div>
     <div class="panel-body">
-        可以。Sing-box 原生支持解析 Clash YAML 配置，并自动转换为自身 JSON 结构。节点和规则基本兼容，但部分脚本和自定义插件可能需要手动调整。<hr />    </div>
+        全局代理适合所有流量走节点，如游戏和全局科学上网；规则代理仅针对指定应用、IP 或端口走节点，可优化带宽使用和访问效率，根据使用场景选择模式。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的协议和混淆组合如何选择？</h5></div>
@@ -377,34 +377,9 @@ A5：不必强制每日更换，但应在发现节点失效或网络不稳定时
         根据网络封锁情况选择合适协议和混淆组合，例如 tls1.2_ticket_auth 模拟 HTTPS 流量。选择最佳组合可提高抗封锁能力和稳定性，保证节点长期可用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 可以定时更新订阅节点吗？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 可以替换 Clash 的 YAML 配置吗？</h5></div>
     <div class="panel-body">
-        支持。用户可设置定时更新频率，例如每天或每小时，程序会自动下载订阅节点并替换旧节点，确保节点始终可用并保持最新线路信息。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 如何选择全局代理与规则代理模式？</h5></div>
-    <div class="panel-body">
-        全局代理适合所有流量走节点，如游戏和全局科学上网；规则代理仅针对指定应用、IP 或端口走节点，可优化带宽使用和访问效率，根据使用场景选择模式。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 无法识别某游戏流量时应如何处理？</h5></div>
-    <div class="panel-body">
-        请确认已启用 TUN 模式并在游戏路径中选择正确的执行文件。部分游戏使用反作弊系统需管理员权限运行 Netch；若仍无法识别，可尝试手动添加端口规则。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 支持哪些传输层协议？</h5></div>
-    <div class="panel-body">
-        V2Ray 支持多种传输层，包括 TCP、mKCP、WebSocket、gRPC、QUIC 等。每种传输方式都有不同的性能特点，例如 TCP 稳定、WS 兼容 CDN、QUIC 延迟低。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS 在高封锁环境下的优势是什么？</h5></div>
-    <div class="panel-body">
-        VLESS 去掉了内置加密，依赖 TLS 层安全，减少被 DPI 检测的特征。结合 XTLS 或 Reality 模式，可以更好地隐藏流量，提高在高封锁网络中的稳定性与隐蔽性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 自动节点切换如何改善网页访问速度？</h5></div>
-    <div class="panel-body">
-        Clash 结合策略组和延迟检测功能，自动选择延迟低、稳定性高的节点处理网页流量。提升访问速度和稳定性，减少加载时间和浏览卡顿，优化整体网络体验。<hr />    </div>
+        可以。Sing-box 原生支持解析 Clash YAML 配置，并自动转换为自身 JSON 结构。节点和规则基本兼容，但部分脚本和自定义插件可能需要手动调整。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mellow TUN 模式适合哪些应用？</h5></div>
@@ -414,7 +389,32 @@ A5：不必强制每日更换，但应在发现节点失效或网络不稳定时
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 的 ws+tls 传输模式有什么优点？</h5></div>
     <div class="panel-body">
-        ws+tls 模式利用 WebSocket 伪装成普通 HTTPS 流量，使得防火墙难以区分代理与正常访问。该模式兼容性强，适合部署在支持 Nginx 或 Caddy 的 Web 服务器上。    </div>
+        ws+tls 模式利用 WebSocket 伪装成普通 HTTPS 流量，使得防火墙难以区分代理与正常访问。该模式兼容性强，适合部署在支持 Nginx 或 Caddy 的 Web 服务器上。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 自动节点切换如何改善网页访问速度？</h5></div>
+    <div class="panel-body">
+        Clash 结合策略组和延迟检测功能，自动选择延迟低、稳定性高的节点处理网页流量。提升访问速度和稳定性，减少加载时间和浏览卡顿，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 无法识别某游戏流量时应如何处理？</h5></div>
+    <div class="panel-body">
+        请确认已启用 TUN 模式并在游戏路径中选择正确的执行文件。部分游戏使用反作弊系统需管理员权限运行 Netch；若仍无法识别，可尝试手动添加端口规则。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS 在高封锁环境下的优势是什么？</h5></div>
+    <div class="panel-body">
+        VLESS 去掉了内置加密，依赖 TLS 层安全，减少被 DPI 检测的特征。结合 XTLS 或 Reality 模式，可以更好地隐藏流量，提高在高封锁网络中的稳定性与隐蔽性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekobox 可以定时更新订阅节点吗？</h5></div>
+    <div class="panel-body">
+        支持。用户可设置定时更新频率，例如每天或每小时，程序会自动下载订阅节点并替换旧节点，确保节点始终可用并保持最新线路信息。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 支持哪些传输层协议？</h5></div>
+    <div class="panel-body">
+        V2Ray 支持多种传输层，包括 TCP、mKCP、WebSocket、gRPC、QUIC 等。每种传输方式都有不同的性能特点，例如 TCP 稳定、WS 兼容 CDN、QUIC 延迟低。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -443,16 +443,16 @@ A5：不必强制每日更换，但应在发现节点失效或网络不稳定时
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-11-19-top-vpn.htm" title="顶级VPN节点 - 11月19日20.1M/S|免费SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 11月19日20.1M/S|免费SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点节点推荐，VPN节点购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-14-share-vpn.htm" title="顶级VPN节点 - 11月14日19.1M/S|免费Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 11月14日19.1M/S|免费Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点节点推荐，VPN节点购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-7-node-share.htm" title="顶级VPN节点 - 10月7日21.5M/S|免费V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 10月7日21.5M/S|免费V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点节点推荐，VPN节点购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-6-free-node-subscribe.htm" title="顶级VPN节点 - 10月6日19.4M/S|免费Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Singbox节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 10月6日19.4M/S|免费Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Singbox节点节点推荐，VPN节点购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-10-vpn-free.htm" title="顶级VPN节点 - 11月10日18M/S|免费V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 11月10日18M/S|免费V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点节点推荐，VPN节点购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-15-node-share.htm" title="顶级VPN节点 - 11月15日19.5M/S|免费Singbox节点/SSR节点/Clash节点/V2ray节点/Shadowrocket节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 11月15日19.5M/S|免费Singbox节点/SSR节点/Clash节点/V2ray节点/Shadowrocket节点节点推荐，VPN节点购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-17-mianfei-vpn.htm" title="顶级VPN节点 - 10月17日20.3M/S|免费V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 10月17日20.3M/S|免费V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点节点推荐，VPN节点购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-19-vpn-free.htm" title="顶级VPN节点 - 10月19日19.8M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 10月19日19.8M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点节点推荐，VPN节点购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-30-free-node-subscribe-links.htm" title="顶级VPN节点 - 11月30日18.3M/S|免费Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 11月30日18.3M/S|免费Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点节点推荐，VPN节点购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-2-vpn-node.htm" title="顶级VPN节点 - 11月2日20.5M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 11月2日20.5M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，VPN节点购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-15-mianfei-vpn.htm" title="顶级VPN节点 - 10月15日19.1M/S|免费SSR节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 10月15日19.1M/S|免费SSR节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，VPN节点购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-12-free-node-subscribe.htm" title="顶级VPN节点 - 10月12日18.3M/S|免费Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 10月12日18.3M/S|免费Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点节点推荐，VPN节点购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-14-top-vpn.htm" title="顶级VPN节点 - 10月14日19.3M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 10月14日19.3M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点节点推荐，VPN节点购买推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-10-18-vpn-github.htm" title="顶级VPN节点 - 10月18日18.9M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 10月18日18.9M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点节点推荐，VPN节点购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-8-vpn-free.htm" title="顶级VPN节点 - 10月8日20.7M/S|免费Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 10月8日20.7M/S|免费Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点节点推荐，VPN节点购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-4-free-vpn-node.htm" title="顶级VPN节点 - 11月4日18.1M/S|免费Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 11月4日18.1M/S|免费Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点节点推荐，VPN节点购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-24-free-vpn-node.htm" title="顶级VPN节点 - 10月24日21M/S|免费Shadowrocket节点/SSR节点/Clash节点/Singbox节点/V2ray节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 10月24日21M/S|免费Shadowrocket节点/SSR节点/Clash节点/Singbox节点/V2ray节点节点推荐，VPN节点购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-11-free-node-subscribe.htm" title="顶级VPN节点 - 10月11日19.9M/S|免费V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 10月11日19.9M/S|免费V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点节点推荐，VPN节点购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-9-vpn-free.htm" title="顶级VPN节点 - 10月9日20.1M/S|免费V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点节点推荐，VPN节点购买推荐">顶级VPN节点 - 10月9日20.1M/S|免费V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点节点推荐，VPN节点购买推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -464,7 +464,10 @@ A5：不必强制每日更换，但应在发现节点失效或网络不稳定时
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
